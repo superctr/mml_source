@@ -1,0 +1,17 @@
+@1 psg 15 14>8:15 / 8>0:20
+@2 psg 15 13>11:6 / 10>0:40
+
+@M1 | 0 3 7
+@M2 | 0 3 6
+G t150
+
+GH @1 v15
+J 'mode 2' @2 v15 k-1K200
+
+G l2  o3e4    e.f+.f+.g+. l4g+2aa2g+ f+2.r2.        f+2.g+2a>c+2.<b2.
+H l4 M1 r4 o3[rf+f+]6                rM2g+g+ r2.   [rg+g+]4 M0
+J l2    r4 o4[a.e.]3                 b. l4b>c+d< l2[e.b.]2
+
+G o3 l8 o4 f+r<f+4r 4 >c+<re4r 4 brc+4r4 a2r
+H o3 l8 o4 r e<r 4g+4 >r <br4f+4 rar 4e4 r2r
+J l4 o4    e2.ef+g+aec+<a2r

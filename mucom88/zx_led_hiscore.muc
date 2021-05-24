@@ -1,0 +1,25 @@
+#title LED Storm - High score
+#composer Tim Follin
+#author ctr
+#voice voice.dat
+#pcm mucompcm.bin
+#date 2020/3/22
+#comment
+
+# *1{ w10 v12 E255,255,255,230,5,8 P3 M1,1,-100,-1> }
+# *2{ w7 v12 E220,50,5,200,1,25 < P1 MF0 }
+
+D t208
+
+D C96 v12 E220,50,3,200,1,25
+E C48 v12 *2
+F C96 v12 E220,50,5,200,1,25
+
+D L % 4 o4 g+[&>g+&c+&>c+&<e&>e/&<<g+]8 g[&>c&<b&>e&d&g/&<g]8 f+[&>f+&<a&>a&c+&>c+/&<<f+]8 f[&>c&<a&>e&c&g/&<f]8
+E L l4 o2[ara^16>a8.*1cr*2/d^16e8.]2 <g^16f+8. [ere^16>e8.*1cr*2/<a^16b8.]2 g^16e8. [drd^16>d8.*1cr*2/<g^16a8.]2 e^16f8. [grg^16>g8.*1cr*2/c^16d8.]2 <f+^16e8.
+F L o7 [v10 [a%2e%2r%20(]8]8
+
+F v9 l12 o4[[eg+b>eg+b>e<bg+e<bg+]2 [dgb>dgb>d<bgd<bg]2 <[a>c+ea>c+eaec+<aec+]2 [ceg>ceg>c<gec<ge]2]2
+F v12 l8 o6 [e.<b4g+1.r16 >d.<b4g1.r16 a.f+4c+1.r16 >c.<a4e1.r16]2
+
+F o6 M1,1,8,-1 [v10 g+r(2g+r(1g+r(1g+r r1]4 MF0

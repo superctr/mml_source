@@ -1,0 +1,94 @@
+#platform mdsdrv
+
+#title      Boiling Point
+#composer   Keishi Yonao
+#game       Mad Stalker: Full Metal Forth
+#programmer ctr
+
+@3 fm
+;  ALG FB
+   003,007
+;  AR  DR  SR  RR  SL  TL  KS  ML  DT  SSG-EG
+   031,018,004,005,009,024,002,008,005,000
+   031,012,007,005,002,026,001,000,002,000
+   031,012,002,005,005,038,000,001,000,000
+   031,002,002,010,001,003,000,000,001,000
+
+@4 fm
+;  ALG FB
+   002,007
+;  AR  DR  SR  RR  SL  TL  KS  ML  DT  SSG-EG
+   018,011,001,011,001,020,000,001,003,000
+   030,005,001,011,001,028,000,002,005,000
+   030,005,001,011,001,028,000,001,002,000
+   030,005,001,011,001,004,000,003,007,000
+
+@5 fm
+;  ALG FB
+   001,007
+;  AR  DR  SR  RR  SL  TL  KS  ML  DT  SSG-EG
+   028,023,003,011,001,019,001,004,003,000
+   025,002,001,011,001,024,000,002,005,000
+   025,002,001,011,001,026,000,002,007,000
+   023,002,002,011,000,004,000,002,002,000
+
+@20 pcm "kick.wav"
+*20 @20v10c  ;D20a
+@21 pcm "kick_crash.wav"
+*21 @21v10c  ;D20b
+@22 pcm "snare.wav"
+*22 @22v10c  ;D20c
+@23 pcm "tom_lo.wav"
+*23 @23v11c  ;D20d
+@24 pcm "tom_m.wav"
+*24 @24v11c  ;D20e
+@25 pcm "tom_hi.wav"
+*25 @25v11c  ;D20f
+@26 pcm "hat_closed.wav"
+*26 @26v12c  ;D20g
+@27 pcm "hat_open.wav"
+*27 @27v12c  ;D20h
+
+@M1 0:30 V0:1:8
+
+A t135
+A @3 v11
+B v9
+C r8.K20v7
+DE @4 v8
+F D20
+
+; Intro
+A  L l16 o3cr>(c<c(c)b-(2b->)3c^8.(2&c(c&)2fg&b-)1
+BC L l16 @4 o6 c(2c)2 e-r(2e-)2 d(2d)2 d-^4 c4
+D  L l16    o5 c(2c)2 b-r(2b-)2 a(2a)2 a-^4 g4
+E  L l16    o4 c(2c)2 >fr(2f)2  e(2e)2 e-^4 d4
+F  L l16 b8cc8e8b8cf8b4
+
+; Part 1
+*100 l16 o4[c<(c(2c)2>c)<c(2c)/gc)b-(c)>c(2c(2c<)3f&e-b-)]2 b-c)f(&e-f
+A  l16 o4[[*100/f)<g(fg>g)]2 /f)&e-&c<b-g]2 >f)&e-<c&e-&e
+BC l16 @5 M1 [o4b-4.grb-r>f/e-^4e-4r8 d8c8.d8.e-8 <b-4.>c8d8.<b-8.>c8^2.^16G50<&c16 r8G0]2 >e-^4
+BC ^2.l32f&g-&g4r16e&fl16e-fb-rb-^2.^8l32b&>c^4.G50<&c16 r8G0
+D  l16 [f2 (2^8)2fb-^4 l8(2&b-(2&b-(2b-)6/a-a-(2^16)2a-(2^16)2a l8 f2^(2^(2fr)4 b-4.a4.a-4]2
+E  l16 [c2 (2^8)2cf ^4 l8(2&f (2 f (2f )6/e-e-(2^16)2e-(2^16)2e l8 c2^(2^(2cr)4 f4. f4.e-4]2
+D  l16  a-4a-(2^)2a-a-8. g2^8(^8)g8a-8^4.b-4.a-4
+E  l16  e-4e-(2^)2e-e-8. d2^8(^8)d8e-8^4.d4. d-4
+F  l16 [b8hgc8ha8ghgch8g a4c8ha8ghgcggh / a8hgc8ha8ge8cd8c a4c8ha8cf8b4]2 a8hgc8ha8ghgc8hg afe8c8ha8d8.b8hc
+
+; Part 2
+*101 l16o3[f(f>f<f)>e-(<f>e-<f)>f(<f(2f)2>f8/e-c<b-)]2
+A  l16 o3[*101/fd-(2^)3k-5]2>e-c<b-k0)
+A  l16 o3*101fg>g) <a-(a->a-<a-)>a-(<a->c<a-)>a-(<a-(2a-)2>a-8fga-) <b-(b->b-<b-)>b-(<b->f<b-)>b-(<b-(2b-)2b-)b8.(2^)2
+BC l4@4o5b-1[b-.>c.d32&e-4R32 d./<b-.b32>&c8R32<g8^2. G50<&g16r8G0 >a-32&a32&b-1]2 >l16e-rdcde-rcgf^2.<@5g-32&g4R32
+D  l4  g1a-.a-.a- b-.f.e-^.f.e- g1a-.a-.b-b-2(2^8(2^8)4>cc2. d-
+E  l4  d1e-.e-.e- f. d.c ^.d.c  d1e-.e-.g f2 (2^8(2^8)4 ga-2.a-
+F  l16 [b4c8hgaghgcghg [a4c8h/gaghgcggh]3 /gagcfcef8]2 a8chgc4
+
+; Part 3
+A  l16 o4[*100f)<g(fg>g) c<(c(2c)2>c)<c(2c)/d8(2^)2d>d<d8d>c&d )e-<(e-(2e-)2>e-)<e-(2e-)fe->e-<e-(e-)b-)b8.(2^)2]2
+A  l16 gc)b-(c>c(2c(2c<)3f&e-b-) f(f>f<f )>g(<gg>g )<a-(>a-<a-)>b-8(<b-b-&b)2
+BC l16 o5f4.[d4e-rdc<b->d^4.c8^4.<b-b>c4.f32&g-32&g^4c4 /f2^8e-rfg8. e32&f4.R32]2 f2.^ G50<&f16 r8G0
+D  l4  [d.<b-.^a-.a-.^ a.>c.<a />c. c. d-]2 <a-fg>c
+E  l4  [b-.f.^ e-.e-.^ f. a. f / a-.a-.a-]2  e-de-g
+F  l16 [b8hgc8ha8ghgch8g a4c8ha8ghgcggh / a8hgc8b8.gagc8gh a4c8ha8cf8b4]2 a8hgc8ha8ga8c8gh a4c8hgacfe8ccc

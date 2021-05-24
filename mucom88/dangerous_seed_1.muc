@@ -1,0 +1,53 @@
+#title Dangerous Seed - Stage 1
+#composer Yoshinori Nagumo
+#author ctr
+#voice voice.dat
+#pcm mucompcm.bin
+#date 2020/1/11
+#comment (c)1988 namco ltd.
+
+A t203
+A C96 @107v15 L
+B C96 L p2 @214v12   R-2RF1
+C C96 L p3 @214v12   R-2RF1
+H C96 L p1 @214v12   R-2RF1
+I C96 L @21v9 p1    RF0q0
+J C96 L @21v9 p2 D5 RF0q0
+E C96 @3v14 \=3,2 L
+K C96 v100 o1 L
+D C96 @5v13 \=3,2 L
+
+A l8 q4 o3 [[a]16[g+]16[f+]16[c]6dd[e]8]2
+B l4 q8 o5 [[c.c.c.c.cc]2 c+.c+.c+.c+.c+c+ d+.d+.c.d.dd]2
+C l4 q8 o5 [e.e.e.e.ee d+.d+.d+.d+.d+d+ f.f.f.f.ff f.f.e.f+.f+f+]2
+H l4 q8 o5 [[g.g.g.g.gg]2 a+.a+.a+.a+.a+a+ a+.a+.a.a.ab]2
+I l8 o4    [e1^4 a+>cd4e<g ^1^8>gfd+cdd+f >c1^8<a+>c<a+fcc+d+ fd+fa+fd+ad+f+ef+>cd<bag]2
+J l8 o4    [e1^4 a+>cd4e<g ^1^8>gfd+cdd+f >c1^8<a+>c<a+fcc+d+ fd+fa+fd+ad+f+ef+>cd<bag]2
+E l8 o4    [e1^4 a+16b16>cd8.d+16e<g ^1^16>f+16gfd+cdd+f16b16 >c1^8<a+>c<a+fcc+d+ fd+fa+fd+ad+f+ef+>cd<bag]2
+K l8 k1  [@1c4@8c4@1cc@8c4 @1c4@8c@1c4c16c16@8c4]8
+D l32 o2 [a\>d\e\a\a\>d\e\a\a\>d\e\a\a\>d\e\a\
+D        a\e\d\<a\a\e\d\<a\a\e\d\<a\a\e\d\<a\
+D        g\>c\d\g\g\>c\d\g\g\>c\d\g\g\>c\d\g\
+D        g\d\c\<g\g\d\c\<g\g\d\c\<g\g\d\c\<g\
+D        f\a+\>c\f\f\a+\>c\f\f\a+\>c\f\f\a+\>c\f\
+D        f\c\<a+\f\f\c\<a+\f\f\c\<a+\f\f\c\<a+\f\
+D        a+\>d\f\a+\>d\f\a+\>d\f\a+\>d\f\<a\>c\e\a\
+D        <<<<d\f+\a\>d\f+\a\>d\f+\a\>d\f+\a\b\f+\d\<b\]2
+
+A [[ff>f<f]4[g+g+>g+<g+]4[ee>e<e]4/[aa>a<a]4]2 cc>c<c+4c+>c+<c+ dd>d<e4e>e<e
+B @108v9<  [<a8aa.a8aa.aa >c8cc.c8cc.cc         d8dd.d8dd.dd         / c+1^1]2 <a+.b8^2>c.c+8^2
+C @108v9< [<b8bb.b8bb.bb >d+8d+d+.d+8d+d+.d+d+ f+8f+f+.f+8f+f+.f+f+ / e1^1]2 d.d+8^2e.f8^2
+H @108v9< [ e8ed.e8de.de  g8gf.g8fg.fg         a8ag+.a8g+a.ab       / g+1^1]2 f.f+8^2g.g+8^2
+I R-3RF1 q4 @99o4v10  [e1^2a4eg^1^2>c4<g>d ^1^2d4/ec+^1^1]2 e4f4.f+^2 g4.g+^2
+J R-3RF1 q4 @99o4v10  [e1^2a4eg^1^2>c4<g>d ^1^2d4/ec+^1^1 ]2 e4f4.f+^2 g4.g+^2
+E o4     [e1^2a4eg^1^2>c4<g>d ^1^2d4/ec+^1 l32 <<<c+\e\g\>c+\e\g+\>c+\e\g+\>c+\e\g+\>c+\e\g+\>c+\<<]2 l8e4f4.f+^2 g4.g+^2
+K [[@1c c16c16 @8c /@1c]8 c]3
+K [@1c c16c16 @8c @1c]5 r@8c16c16cc c@7(40p2g16p3e16p1c)40@8p3c4 @7(40p2e16p3d16p1c)40 @8p3c16c16
+D        [>e\<a\>d\e\a\<a\>d\e\g\<a\>d\e\f\<a\>d\<a\
+D        >g\<a\>d\e\a\<a\>d\e\g\<a\>d\e\f\<a\>g\<a\
+D        >g\c\d+\g\a+\c\d+\g\>c\<c\d+\g\>d\<c\d+\g\
+D        >c\<c\d+\g\a+\c\d+\g\a\c\d+\g\a+\c\g\c\
+D        a\c+\f+\a\d\f+\a\d\f+\a\d\f+\a\d\f+\a\
+D        >d\<d\f+\>c\<d\f+\b\d\f+\a\d\f+\b\d\a\d\/
+D        g+\c+\e\g+\c+\e\g+\c+\e\g+\c+\e\g+\c+\e\g+\
+D        c+\e\g+\c+\e\g+\c+\e\g+\c+\e\g+\c+\e\g+\c+\]2 r1r1

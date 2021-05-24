@@ -1,0 +1,199 @@
+#Code		"../bin/nsd_se.bin"
+#Title		"vandring (NSD.Lib version)"
+#Composer	"ctr"
+#bgm		1
+#se			1
+#OffsetEv	0
+#OffsetEm	10000
+#OffsetEn	20000
+#OffsetE@	30000
+
+;======================================================================
+;  Envelope data
+;======================================================================
+E(00000)	{ 15 7 5 4 3 2 2 1 1 0 L 0}
+E(00001)	{ 15 3 2 1 1 1 0 L 0 }
+E(00002)	{ 15 8 6 6 5 5 4 4 3 3 2 2 1 1 0 L 0 }
+E(00003)	{ 15 9 8 7 L 6 5 R 4 3 2 1 L 0}
+
+E(00033)	{ 8 9 8 7 L 6 5 R 4 3 2 1 L 0}
+E(00034)	{ 15 9 8 7 D20 6 D10 5 4 L 3 R 2 1 L 0 }
+E(25000)	{ L -4 -8 -11 -13 -15 -17 -18 }
+
+;======================================================================
+;  Macro data
+;======================================================================
+$tbd { SE0 }
+$bd { $tbd Ev0 d }
+$hh {      Ev1 e }
+$sd { $tbd Ev2 c }
+
+;======================================================================
+;  Subroutine data
+;======================================================================
+
+;---------- Part A -----------
+; Ch.2 Main Arpeggio
+sub(0) {
+	K{es-moll} Ev0
+	q0 	l16	o4egebe>d<gbgege>d<ege
+			<b>dfdfbfb>d<b>df<bgbg
+	K{=b}	<ab>e<b>ege<b>e<babaeab
+	K{-b}	>dfaf>d<afafdfd<a>dfa
+}
+
+; Ch.1 Main Arpeggio
+sub(1) {
+	K{es-moll}
+	q0	l8	Ev3 o3 b>df4.r4.
+			<a>de4.r4.
+			<a>de4.r4.
+			<b>df4.r4.
+}
+
+; Ch.3 Intro bass line
+sub(2) {
+	K{es-moll}
+	q1	l8	o3|:rf16f16f4f\brf:|<br4>:|dr4:|br4
+}
+
+; Ch.2 Melody
+sub(3) {
+	K{es-moll}
+	q2	l4	Ev33 o4f Ev3 f8e<a Ev34 b8^2. r
+			Ev33 o4f Ev3 f8e a Ev34 f8^2. r
+}
+
+;---------- Part B -----------
+; Ch.1 Main arpeggio
+sub(10) {
+	K{es-moll}
+		l16	o5(7e )g )e )b )e> )d< )g )b[:gege>d<ege
+			<b>dfdfbfb>d<b>df<bgbg
+	K{=b}	<ab>e<b>ege<b>e<babaeab
+	K{-b}	>dfaf>d<afafdfd<a>dfa  :o5egebe>d<gb:]4
+}
+
+; Ch.3 bass line
+sub(11) {
+	K{es-moll}
+	q1	l8	o3|:rf16f16f4f\bb4:|<bb4>:|ee4:|aa4
+}
+sub(12) {
+	K{es-moll}
+	q1	l8	o3|:rf16f16f4f\bb4:|<bb4>:|ee4:|ee4
+}
+sub(13) {
+	K{es-moll}
+	q1	l8	o3|:rf16f16f4f\bb4:|aa4:|aa4:|ee4
+}
+
+; Ch.2 melody
+sub(14) {
+	K{es-moll}
+	q2	l4	|: Ev33 o4f Ev3 f8e<abb8b8b8aee8f8fa8a Ev34 \ b8^2.r
+			Ev33 o4f Ev3 f8eaff8e8f8ea8{a16b}^16^ba>d8 Ev34<b8^2.r
+			:| b4&>d8&f2r
+			Ev33 o4f Ev3 f8eafb8a8>d8<b>d8{d16f}^16^fea8 Ev34f&b8&
+			{b8>f}^4.r
+}
+
+;---------- Part C -----------
+; Ch.1 melody
+sub(20) {
+	K{es-moll}
+	q2	l4	Ev33 o6f Ev3 f8ea[:fff8ea8:]2ff8e8f8e<a8b
+		l8	b4ba4>d<b4baba4b{b16>f}^16^4ffe4<ab4baba4ef4
+		l8	fefe4af4 fefe4a{a16b}^. baba4>d<b4 baba4ef4
+		l8	[:fefe4:af4:]4 fe
+}
+
+; Ch.3 bass line
+sub(21) {
+	K{es-moll}
+	q1	l8	o3[:rf16f16f4f:arf:]4 br. $tbd r16
+			[|:rf16f16f4f\brf:|<br4>]2
+}
+
+;---------- Part D -----------
+; Ch.1 melody
+sub(30) {
+	K{es-moll}
+	q2	l4	Ev33 o4f Ev3f8e<abb8a8b8>ef8e8{e16b}^8.ba8>d<b>f8<a8b8ab8a8
+		l8	[:bf>f<abfrb4f>f<abf:a4:]2 ae
+		l8	[:bfafbfrb4:fafbfa4:]2 baba4fe
+}
+
+; Ch.3 bass line
+sub(31) {
+	K{es-moll}
+	q1	l8	o3|:rf16f16f4f\bb4:|<bb4>:|dd4:|bb4
+}
+
+; Ch.1 Main Arpeggio
+sub(32) {
+	K{es-moll}
+	q0	l8	Ev3 o4 b>df4.r4.
+			<b>da4.r4.
+			<a>de4.r4.
+			<b>de4.r4.
+}
+
+
+
+;**** Ch.4 Drum pattern
+sub(100) {
+	l8$bd l16$hh$hh l8$sd l16$hh$hh l8$bd l16$hh$hh l8$sd l16$hh$bd
+}
+
+sub(101) {
+	l4$bd$sd$bd$sd
+}
+
+sub(102) {
+	l4$bd$sd$bd l16$sd$sd l8$sd
+}
+
+;======================================================================
+;  SE0 data
+;======================================================================
+se(0) {
+	t150
+TR3		l16 En5000 o4f
+}
+
+;======================================================================
+;  BGM0 data
+;======================================================================
+bgm(0) {
+	t150
+TR1,2,3,4	L
+;TR1,2,3,4	J1
+;---------- Part A -----------
+TR1		@0 v12 [l1r]4 [S1]5
+TR2		@2 v10 [S0]4 v12 [S3]2
+TR3		[l1r]8 [S2]4
+TR4		o6 _-2 [S100]24
+
+;TR1,2,3,4	J0
+;---------- Part B -----------
+TR1		@1 v10 S10
+TR2		S14
+TR3		[S11]2 S12 S13
+TR4		[S100]16
+
+;TR1,2,3,4	J0
+;---------- Part C -----------
+TR1		@1 v12 S20 S1
+TR2		v10 [S0]4 [l1r]4
+TR3		S21 S21 S2
+TR4		[S101]19 S102
+
+;TR1,2,3,4	J0
+;---------- Part D -----------
+TR1		@0 v12 [S1]4 @2 [S32]2
+TR2		v12 S3 S30 v10 [S0]2
+TR3		S31 S11 [S12]2 [S2]2
+TR4		[S100]24
+
+}

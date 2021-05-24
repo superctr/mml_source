@@ -1,0 +1,139 @@
+#title FM3test4
+#composer ctr
+#platform megadrive
+
+;=== melody ===
+@1 fm 2 7 ;ians bajsbas
+ 31 17 0  0  6 15 0 0 0 0
+ 31 15 0 15 15 11 0 6 2 0
+ 31 15 0  5  2 50 0 2 4 0
+ 31 17 0 11  1  0 0 1 0 0
+
+@2 fm 4 2 ; ians bajs 2op 2/3 pad
+ 20 0 0 1 0 19 0 3 3 0
+ 31 8 4 9 2  0 0 3 0 0
+ 20 0 0 1 0 19 0 2 3 0
+ 31 8 4 9 2  0 0 2 0 0
+
+@3 fm 4 7  ; ians bajs dual squares
+ 31 0 0 0 0 27 0 2 0 0
+ 25 0 0 15 0 0 0 3 0 0
+ 31 0 0 0 0 12 0 2 3 0
+ 25 0 0 15 0 0 0 15 3 0
+
+@4 psg 11>15:3 15>12:20 / 15>0:20
+
+@5 psg 11>15:3 / 0
+
+@6 fm 2 7 ; ians dist lead
+ 20  0 0 1 0 30 0  8 3 0
+ 31  8 4 7 2 11 0  4 7 0
+ 20  0 0 1 0 42 0 12 3 0
+ 31 10 4 7 4  0 0 12 0 0
+
+@7 psg 8>14:12 / 0
+
+@8 fm 4 7 ;FM reverse
+ 31 0  0 15 0  0 0 10 0 0
+  2 0 12 15 0  0 0 15 0 0
+ 31 0  0 15 0  0 0 15 7 0
+  2 0 11 15 0 19 0 15 0 0
+
+;=== general pitch envelope ===
+@M1 0:20 V0:1:3
+@M2 0:100 0>1:10
+@M3 0>-3:25 0>-12:15 0>-12:10 0>-12:8 0>-12:7 0>-12:6 | 0>-12:5
+@M4 0:50  V0:1:4
+@M5 -4>0:10 0:20 V0:1:3
+@M6 0>-6:25
+
+;=== fm drums ===
+@30 fm 4 7 ; ians bajs fm3 kick
+ 31  0  0 15  0 11 0 6 0 0
+ 31  0 16 15  0 35 0 0 0 0
+ 31 23  0 15 15 11 1 2 7 0
+ 31 10  7 15  9 12 1 0 0 0
+@31 fm 4 7 ; ians bajs fm3 snare
+ 31  0  0 15  0 11 0 6 0 0
+ 31  0 16 15  0  4 0 0 0 0
+ 31 23  0 15 15 11 1 2 7 0
+ 31 10  7 15  9 10 1 0 0 0
+@M30 0>-24:10
+*30 @30M30o4c
+@M31 0>-12:10
+*31 @31M31o5d
+ 
+;=== psg drums ===
+@40 psg 13>0:4 ; D40a closed hat
+*40 @40M0o9b
+@41 psg 9>0:4  ; D40b closed hat (muted)
+*41 @41M0o9b
+@42 psg 13>11:3 10>6:6 5>0:20 ; D40c open hat
+*42 @42M0o9b
+@43 psg 12>6:3 5>1:15 1>0:20 ; D40d ride
+*43 @43M0o9d
+@44 psg 12>0:4  ; D40e closed hat (muted2)
+*44 @41M0o9b
+@M45 0>5:10 5>4:11
+@45 psg 14>11:3 15>0:40
+*45 @45M45o8g ;D40f  Crashing the party
+@46 psg 13>11:3 11>0:130
+*46 @46M0o8b ;D40g    loooong cymbal
+@47 psg 0>11:150 / 0
+*47 @47M0o8b ;D40h  reverse pls
+
+
+
+A   t150
+
+ABCDEFGHIJ [
+
+A   @1 v11
+BDE @2 v5 {p1/p3/p2}
+GH  @4 v12 M1
+C   'fm3 0011' @3v3
+I   'fm3 1100'   v3 K20 Q6
+F   @6 v9 D0
+J   'mode 1' D40v15
+
+EFJ /
+
+A   l1 rrrr l4 o3a.b.>c^1 M2 l1 d^2. r4
+BDE o3 [l4.{a/>c/>e} {e/<g/<b} l4{f/a/>c}^1   /l4.{g/b/d} {g/b/d} ^4 {e/g/<b} {e/g/b} ^4] M2 l1{g/b/d}^2. r4
+GH  l1 rrrr o3 l4. {e/b} {f+/>c+} l4 {g/d} l1 ^1 {a/e} M3G1 &o1 l2.{a/e}
+C   l16 o6 [p1a(2p3a<p2a>)2p3a(2<p1ap3a>)2p2a(2<p3a>)2]12 >[p1a(2p3a<p2a>)2p3a(2<p1/ap3a>)2p2a(2<p3a>)2]4 p3 r4
+I   l16 o6 [ (2e<e)2e>(2e<e>)2e(2e<e>)2e(2e<e>)2e<(2/e>e)2e<e ]8 'fm3 1111' r4
+F   l1 rrrr M5 o4a M1 l16agegeded<a>c<agagega1^2.
+J   l1 rrrr l4 f.f.f^1 f2h2^2. r4
+
+F   D30v13 l16 bbbb
+GH  M6G0@7{K0/K20} o2a4 M0
+
+ABCDEFGHIJ /
+
+G   @5 v9
+
+A   l16 o3 [a8aaa8aaa8ga/^gag]4 >>ed<ba
+BDE l1 o3 M4 {d/f+/a} ^2.  l4{c/e/g}  l1{>d/>f+/a} ^1
+G   l16 Q7 o4 [a(2a<a>)2a(2<aa>)2a(2<a>)2]24
+HCI l1 [r]10
+HI  rr
+C   l4 @8o7 v14 cccc cccc
+
+A   l16 o4 [[[a8ga8egd8d/cdegeg]2 >c<b/gaeg]2 >ed/ba]2 <ba
+B   l4 o3 [[d >d. ^  ^./d. <c.]2  a. c.]2
+D   l4 o3 [[f+ ^.>f+ ^./f+.<e.]2  f. e.]2
+E   l4 o3 [[a  a. ^ >g./a. <g.]2 >c.<g.]2
+F   l16 [a^^a ba^b ^b^a b^a^ aa^a ba^b ^b^a b^bb]6
+J   l16 [abcb abcb abcb abcb abcb abcb abcb bbbb]6
+
+ABCDEFGHIJ ]2
+
+E   @6 v9 p3 M1
+F   @6 v9 D0
+
+E   l4 o3 b.a.e l8 ^de4rdeg a4be4dega4be4ded l4b.a.e  ^2^8 l8  d egf+1^2. r4
+F   l1 rrrr M1 o3                            l4g.f+.c ^2^8 l8 <a>ced1^2. r4
+;F   D30v13 l16 bbbb
+J   l1 grrh l4 f.f.f^1 f2h2^2. r4
+

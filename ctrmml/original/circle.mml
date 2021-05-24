@@ -1,0 +1,90 @@
+#title Going around in circles
+#author ctr
+#date 2020-12-07
+#platform mdsdrv
+
+;======================================================================
+@1 fm 4 6
+   7  11   5  13   0  34   0   1   2 100
+  14  15   0   6   0   0   0   1   3   0
+  15  28   0   6   3  39   0   1   3   0
+  29  18   0   7   1   7   0   1   5   0
+
+@2 fm 4 6
+  15  11   5   9   0  34   0   1   2 100
+  14  15   0   6   0   0   0   1   3   0
+  15  28   0   7   3  39   0   1   3   0
+  29  18   0   5   1   7   0   1   5   0
+
+@3 fm 0 1
+  31  15   0   7  15  22   2  11   3   0
+  31  16  13   6   2  41   2   5   3   0
+  31   0   0   2   0  38   0   0   3   0
+  31   9   0   6   0   0   0   1   3   0
+
+@4 fm 4 6
+   7  11   5   4   0  34   0   1   2 100
+  14  15   0   4   0   0   0   1   3   0
+  15  28   0   5   3  39   0   1   3   0
+  29  18   0   5   1   7   0   1   5   0
+
+@5 psg 15 15>0:30
+
+@30 pcm "pcm/xgbd.wav"
+*30 v15@30c   ; D30a
+@31 pcm "pcm/xgrim.wav"
+*31 v15@31c   ; D30b
+@32 pcm "pcm/xgbdrim.wav"
+*32 v15@32c   ; D30c
+@33 pcm "pcm/xgsd.wav"
+*33 v8@33c    ; D30d
+*34 v10@33c   ; D30e
+@35 pcm "pcm/xgbdsd.wav"
+*35 v10@35c   ; D30f
+*36 v12@35c   ; D30g
+*37 v15@35c   ; D30h
+
+@38 pcm "pcm/xghhc.wav"
+*38 v7@38c    ; D30b
+@39 pcm "pcm/xghho.wav"
+*39 v6@39c    ; D30c
+
+;======================================================================
+
+A t110 'lforate 1'
+
+A   @3 v10
+BCD @1 v10 q5 'lfo 1 2'
+E   @2 v9 Q7 'lfo 2 2'
+G   @5 v9
+H   @5 v9 K20 r16
+F D30
+K D38
+
+*50 l16 o3[a/ara>cder<]4ra8>agde
+*51 l16 o3[ffrf/a>cer<]4r>ade<
+A [r1]8 l16 [*50*51 o3[ggrgab>d</r]4g [aara/>cder<]4argg]2 l8a1^2.^af1^1g1^2.^ga1^1
+A [k0*50*51 k-5*51*50 / k-3*50*51 k4*51*50 k6*50*51 k1*51*50 k3*50*51 k-2*51*50]2 k0f+1^1r1
+
+B l1 o4[a^ f^g^ a^]4 [a^a^g^ g b / a ^a ^a ^g+b  a+^b ^a+^b->d- c ^c ^<b-^b-b-]2 @4a rr
+C l1 o5[c^<a^b^>c^]4 [c^c^c^<b>d / c+^d ^c+^c+e  d+^d+^c+^d- f  e-^e-^ e-^d d ]2 @4c+rr
+D l1 o5[e^ c^d^ e^]4 [e^f^e^ e g / f+^f+^e ^e g+ f+^f+^f+^f  a- g ^a-^ g ^g f ]2 @4f+rr
+
+E l8 o6[[r1g4ad4/e4.]3e<a4 r1>g4ad4e4.]3 l4a.d.e.<a.l16b8>c<ba8g8 l4a.>e.d.g.eg a2.>c8<bl16>c<ba8g4g8b8g8l4a.>e.d.g.eg
+E Q8(3 [k0*60*61 k-5*61*60 / k-3*60*61 k4*61*60 k6*60*61 k1*61*60 k3*60*61 k-2*61*60]2 k-3 l16a[egde(cd<a>c<(gaeg(de<a k-27]2r
+*60 o7l16 aegdecd<a>c<gaegde<a>egegaga>c<a>cdcdgeg
+*61 o7l16 fcd<a>c<gafgdfcd<a>c<f>cdcdfdfgfgaga>dcd
+
+*70 l16 o4[[ceg/cea]3e]2
+*71 l16 o3[[fa>c/<fa>e]3<a]2
+*72 l16 o3[[gb>d/<gb>e]3<b]2
+*73 *70*71*72 l16 o3[a>ce/<a>cg]3c [ceg/cea]3e ([[a<aa>a<aa>/a<a>]4g<g>]2 [g<gg>g<gg>/g<g>]4f<f> [a<aa>a</aa>a<a]4gg>g<g)
+GH [r1]16 *73 [k0*70*71 k-5*71*70 / k-3*70*71 k4*71*70 k6*70*71 k1*71*70 k3*70*71 k-2*71*70]2
+
+F [r1]8
+F l8 [[abc.b16ab/ab]2a16b32b32b]4 [*200]4 [a4]32 [*200]20
+*200 D30 l8 [abh.b16ab/hb16e16]2h16b32b32g16e16
+
+K [r1]8 [*201]4 [r1]4 [*201]11
+*201 D38 l8[abababa16a16b]4
+

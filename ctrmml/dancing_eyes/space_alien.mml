@@ -1,0 +1,128 @@
+#title Space Alien Stage
+#game Dancing Eyes
+#composer Keiichi Okabe
+#programmer ctr
+#comment ctrmml version by ctr 2021-02-08
+
+#platform mdsdrv
+
+@1 fm 7 0
+ 31 0 0 15 0 5 0 4 0 0
+ 31 0 0 15 0 5 0 3 0 0
+ 31 0 0 15 0 5 0 4 0 0
+ 31 0 0 15 0 5 0 3 0 0
+
+@2 fm 4 0 ;2op lead
+ 20 5 0 1 1 4 0 4 7 0
+ 31 8 4 8 2 0 0 4 0 0
+ 20 5 0 1 1 4 0 1 7 0
+ 31 8 4 8 2 127 0 1 0 0
+
+@3 fm 3 7 ;namco bass
+ 27 14 0 7 3 34 0 8 0 0
+ 31 10 0 8 6 53 0 2 0 0
+ 31 19 0 5 6 15 0 0 0 0
+ 31 6 0 9 14 0 0 0 0 0
+
+@4 fm 6 2 ;Synth bell #0
+ 31 5 5 5 2 30 0 8 7 0
+ 31 8 5 7 15 0 0 12 7 0
+ 31 6 7 7 5  0 0 2 3 0
+ 31 8 5 5 2 10 0 2 3 0
+
+@5 fm 7 0
+ 31 0 0 15 0 5 0 4 0 0
+ 31 0 0 15 0 5 0 3 0 0
+ 31 0 0 15 0 127 0 4 0 0
+ 31 0 0 15 0 127 0 3 0 0
+
+@6 fm 4 0 ;2op piano (poly)
+ 20 0 0 1 0 30 0 4 3 0
+ 31 8 4 7 2 0 0 4 0 0
+ 20 0 0 1 0 30 0 4 3 0
+ 31 8 4 7 2 0 0 4 0 0
+
+@10 psg 15>12:4 / 11>0:14
+
+@54 2op 2 5 5 4 4 0 ; n+4
+@55 2op 2 4 4 3 3 5 ; n+5
+@56 2op 2 7 7 5 5 -4 ; n+6
+@57 2op 2 6 6 4 4 0 ; n+7
+@58 2op 2 8 8 5 5 -4 ; n+8
+
+@64 2op 6 5 5 4 4 0 ; n+4
+@65 2op 6 4 4 3 3 5 ; n+5
+@67 2op 6 6 6 4 4 0 ; n+7
+
+; pcm drum mode
+@30 pcm "bd.wav"
+@31 pcm "sd.wav"
+@32 pcm "bdsd.wav"
+@33 pcm "cow.wav"
+@34 pcm "clap.wav"
+@35 pcm "crash.wav"
+@36 pcm "tamb.wav"
+
+@37 pcm "bd.wav" rate=6500
+@38 pcm "sd.wav" rate=6500
+@39 pcm "cow.wav" rate=6500
+@40 pcm "clap.wav" rate=6500
+
+*30 @30v15c ;D30a
+*31 @30v10c ;D30b
+*32 @30v8c  ;D30c
+
+*33 @31v15c ;D30d
+*34 @31v14c ;D30e
+*35 @32v15c ;D30f
+
+*36 @33v14c ;D36a
+*37 @34v14c ;D36b
+*38 @35v15c ;D36c
+
+@45 psg 14>0:4
+@46 psg 10>0:4
+@47 psg 15>13:3 11>6:6 5>0:20
+
+*45 @45o9b ;D45a
+*46 @46o9b ;D45b
+*47 @47o9b ;D45c
+
+F 'pcmmode 3'
+J 'mode 1'
+
+A t144
+A l16 @57 o2 [V15 [p2fr8 V+5 p1fr8 V+5]5 r8]2 L V20 p3 [[[g-r8 g-r8  a r8 a r8 a4 ]4 k-2]2 k0]2
+B l16 @57 o2 [V15 [p2ar8 V+5 p1ar8 V+5]5 r8]2 L V20 p3 [[[b-r8 b-r8 >d-r8 d-r8 d-4]4 k-2]2 k0]2
+A q5 @67 o2 v11a-1^2. g4 g-1^2.g4 a-1^2.a 4b-1^1b-4r2.r1 q0 @57
+B q5 @67 o3 v11c 1^2.<b4 b-1^2.b4>c 1^2.d-4d 1^1d4r2.r1 q0 @57
+
+C @1 'fm3 0011'  G50 o3 v10 a4<< G8&a2.>>>>a1 &a4 L [<<<<&a2./>>>>&a1 &a4]9 &a1     'fm3 1111'
+M 'fm3 1100' r16 G50 o3  v6 a4<< G8&a2.>>>>a1 &a4 L [<<<<&a2./>>>>&a1 &a4]9 &a1 R16 'fm3 1111'
+D @5         r8  G50 o3  v4 a4<< G8&a2.>>>>a1 &a4 L [<<<<&a2./>>>>&a1 &a4]9 &a1 R8
+
+*99 l4 o4g.<b->c8g^2.g-4 f.<a-b-8>f^2.g- g.<b->c8g^2.a-4 a.cd8a^2.r
+C l4 @4 G0     v7 p1 *99 p3 @1 'fm3 0011'     G16 o3 v10 a4<< G8
+M [r1r1]4                      'fm3 1100' r16 G16 o3  v6 a4<< G8
+D l4 @4 G0K20  v6 p2 *99 p3 @5            r8  G16 o3  v4 a4<< G8
+
+*100 l16o3e8c8<fg8>c<ga8>c8<af8
+*101 l16o3e8c8<fg8>c<ga8>c__-1c<af8 __-1
+*102 l16o3e8c8<fg8>c<ga8>c__1c<af8 __1
+G l16 @10 v15       r1r1 Lr1r1 [r1]16 k3 *100 *101 *100 *102 *100 *102 *100 *100
+H l16 @10 v13K20r8. r1r1 Lr1r1 [r1]16 k3 *100 *101 *100 *102 *100 *102 *100 *100
+
+E l16 @3v13 [r1]4 Lo4[[[g-8eg-r8b8.b8.g-b8.]4 k-2 ]2 k0]2
+*103 l8o3 b->fa-b-16a-f16<b->fa-b-a-16f<b-.b->b-
+E l8 o3   *103a>a< k-2 *103b>b< k0*103b>b< k2*103b->b-< r1r1k0
+
+F l16 D30 r1r1r1 a^fedecebdadedbd L D30 [[a^a^d^cdbea^d^be]7 a^fedecebdadedbd]3
+K l16 D36 r1r1r1 r^^^b^^^^^^^b^^^ L D36 [c^^^[b^^^a^^ab^a^/a^a^]8]3
+L l16 @36 r1r1r1 r1               L v10[c(2c)1c(2c)3]96
+J l16 D45 r1r1r1 r1               L v15[aac^a^a^a^c^c^a^]24
+
+F l4 D0 v15 @37cc @38c @37v12c8 @38v15c8 @37v13c8 @38v14c8 @37v15c4 @38v15c4 @37v15c8 @38v15c8
+K l8 D0 v14 @39c^c^@40c^^^@39c^^c@40c^@39c^
+L l8 v10[c(2c)1c(2c)3]4
+J l8 k-15 v15aac^a^a^a^c^c^a^ k0
+

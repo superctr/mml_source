@@ -1,0 +1,40 @@
+#title Neo-Geo Eyecatch
+#date 2020-04-01
+#platform megadrive
+
+@1 fm 4 0
+  15 12 6 7 0 21 0 3 3 0
+  15 12 5 7 1  0 0 8 7 0
+  15 12 6 7 9 64 0 4 7 0
+  15  5 1 7 2  0 0 0 3 0
+
+@2 fm 4 1
+  25  2 10 4  1 20 0 0 0 0
+  25  6 10 6  1  0 1 0 0 0
+  25  2  9 2  0 26 3 6 0 0
+  25 12 15 6 10  0 1 1 0 0
+
+*20 l8 o6  g. V+8^.V-8  e. V+8^.V-8 b V+8^V-8 a V+2^ V+2^ V+2^ V+2^ V+2^ V+2^ V+2^
+     V-14 >c. V+8^.V-8 <b. V+8^.V-8 g V+8^V-8 a V+3^ V+3^ V+3^ V+3^ V+3^ V+3^ V+3^ r2
+
+*21 l32 o5 g V+8 ^V-8 >c V+8 ^V-8 p1  d V+8 ^V-8  f V+8 ^V-8 p3
+		   g V+8 ^V-8  f V+8 ^V-8 p2  d V+8 ^V-8  c V+8 ^V-8 p3
+		   d V+8 ^V-8 <g V+8 ^V-8 p1 >c V+8 ^V-8  d V+8 ^V-8 p3
+		   d V+8 ^V-8 <g V+8 ^V-8 p2 >c V+8 ^V-8  d V+8 ^V-8 p3
+		  <a V+8 ^V-8 >d V+8 ^V-8 p1  e V+8 ^V-8  g V+8 ^V-8 p3
+		   a V+8 ^V-8  g V+8 ^V-8 p2  e V+8 ^V-8  d V+8 ^V-8 p3
+		   e V+8 ^V-8 <a V+8 ^V-8 p1 >d V+8 ^V-8  e V+8 ^V-8 p3
+		   e V+8 ^V-8 <a V+8 ^V-8 p2 >d V+8 ^V-8  e V+8 ^V-8 p3
+		   c V+8 ^V-8  e V+8 ^V-8 p1  g V+8 ^V-8  b-V+8 ^V-8 p3
+		  >c V+8 ^V-8 <b-V+8 ^V-8 p2  g V+8 ^V-8  e V+8 ^V-8 p3
+		   b-V+8 ^V-8  c V+8 ^V-8 p1  e V+8 ^V-8  g V+8 ^V-8 p3
+		   b-V+8 ^V-8  c V+8 ^V-8 p2  e V+8 ^V-8  g V+8 ^V-8 p3
+		  <a V+8 ^V-8 >d V+10^V-8 p1  e V+10^V-8  a V+10^V-8 p3
+		  <a V+10^V-8 >d V+10^V-8 p2  e V+10^V-8  a V+10^V-8 p3
+		  <a V+10^V-8 >d V+10^V-8 p1  e V+10^V-8  a V+10^V-8 p3
+		  <a V+10^V-8 >d V+10^V-8 p2  e V+10^V-8  a V+10^V-8 p3 r2
+
+A @1 t138    V20  *20
+B @1 r32 K35 V22  *20
+C @2         V26  *21
+D @2 r48 K35 V28  *21

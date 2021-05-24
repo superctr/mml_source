@@ -1,0 +1,44 @@
+#title slangen
+#composer ian k.
+#author ctr
+#voice voice.dat
+#pcm
+#date 2018/12/27
+#comment 
+
+# *1{ w10 v12 E255,255,255,230,12,8 P3 M1,1,-300,-1 }
+# *2{ w7 v10 E255,255,255,1,255,255 P2 MF0 }
+
+A C96T135 @2v9o4 L l8[e-e-e-e-e-e-e-d-]4
+B C96 L l1[r]4
+C C96 L l1[r]4
+D C96     @3v11 o4 L l8q5[e-e-g&e-a-e-16&b-8.d-]4
+E C96 D10 @7v10 o4 L l8q5[e-e-g&e-a-e-16&b-8.d-]4
+F C96 w10       o4 L l16 [*2c8(cc)*1c8*2(cc)]24
+
+A [[e-d-e-r/e-.e-16e-e-]2e-g16ggg16 fe-frffe-c rce-cgce-f]2
+B @28v9o5l8 [e-4e-r4e-re- r4.e-4e-4e- | d-4d-r4d-rd- r4.d-4d-4r]2
+C @28v9o5l8 [g4gr4grg r4.g4g4g | f4fr4frf r4.f4f4r]2
+D [[b-b-a-g4e-e-g]2 f2fe-f>crc<b-rg/a-4r]2 a-b-4
+E [[b-b-a-g4e-e-g]2 f2fe-f>crc<b-rga-/r4]2 b-4
+
+A [d-]7[e-]9[e]7[g-]6 g-16g-16g-g-
+B d-4d-r4d-re-4e-e-r4e-r4 | e4er4erg-4g-g-r4g-g-r
+C f4fr4frg4ggr4gr4 | a-4a-r4a-rb-4b-b-r4b-b-r
+D frfrfga-g^2rgfg | a-ra-ra-b->c<b-^2rb-a-b-
+E frfrfga-g^2rgfg | a-ra-ra-b->c<b-^2rb-a-b-
+F [c8(cc)]7 *1c8*2(cc) | [c8(cc)*1c8*2(cc)]3 *1cc*2(cc)*1c8*2(cc)
+
+A [[fe-f.f16fe-fa-.a-.fa-/b-.b-.b-]2 f16f16a-ge-]3
+B [b-4b-r4b-rb- r4.b-4b-4b- | a-4a-r4a-ra- r4.a-4a-4r]3
+C >[d4dr4drd r4.d4d4d | c4cr4crc r4.c4c4r]3
+D [[>cr<frfe-ffrfe-f/b-rb-r]2 f16f16a-fe-]2 [r1]8
+E [[>cr<frfe-ffrfe-f/b-rb-r]2 f16f16a-fe-]2 [r1]8
+F [[*2c8(cc)*1c8*2(cc)c8(c)*1cc8/*2(cc)]2c8]8
+
+A [f]30e-c [e-e-e-e-e-e-e-d-]16
+B l1b-^a-^ [e-^a-^2l8a-gfg^1^2^e-r/d-^1^1]2 d-^1^2.d-e-
+C l1d^c^ < [g^>c^2l8c<b-a-b-^1^2^gr/f^1^1]2 f^1^2.fg
+D [e-e-g&e-a-e-16&b-8.d-]16
+E [e-e-g&e-a-e-16&b-8.d-]16
+F [[*2c8(cc)*1c8*2(cc)]15 *1ccc8*2c8*1c8]2
